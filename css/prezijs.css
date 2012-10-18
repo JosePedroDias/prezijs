@@ -1,0 +1,99 @@
+/** {
+	margin:						0;
+	border:						0;
+	padding:					0;    
+}*/
+
+body {
+	font-family:				'Muli', sans-serif;
+	font-size: 					0.5em;
+	background-color: 			#000;
+}
+
+ul {
+	list-style-type:			disc;
+	margin:						0;
+	padding:					0;
+	margin-left:				1em;
+}
+
+li {
+	text-indent:				-0.5em;
+	margin:     				0.5em 0;
+}
+
+span {
+	font-size:					1.5em;
+	font-weight:				bold;
+}
+
+i {
+	font-size:					0.7em;
+}
+
+.zoomViewport {
+	position:					fixed;				/* viewport */
+	top:						0;
+	bottom:						0;
+	left:						0;
+	right:						0;
+}
+
+.zoomContainer {
+	position:					relative;
+	width:						1024px;				/* presentation space */
+	height:						 649px;
+	background-color:			#000;
+}
+
+#bg {
+	-webkit-filter:	opacity(0.7)/* blur(2px)*/;
+	/*min-width:					600px;
+	min-height:					600px;*/
+	width:						1024px;
+}
+
+.zoomContainer * {
+	-webkit-filter: none;
+}
+
+.zoomContainer > .zoomTarget {
+	display:					inline-block;
+	position:					absolute;
+	-webkit-transform-origin:	center center;		/* rotate around center */
+
+	background-color:			#DEE;
+	opacity:					0.8;
+	padding:					4px 8px;
+	border-radius:				4px;
+	box-shadow:					3px 3px 4px rgba(0, 0, 0, 0.5);
+}
+
+#title {
+	font-size:					3em;
+	font-weight:				bold;
+}
+
+#api {
+	font-size:					2em;
+	font-weight:				bold;
+}
+
+#api1, #api2, #api3, #api4, #api5 {
+	font-size:					4px;
+}
+
+.icon {
+	width:	12px;
+	height:	12px;
+}
+
+#overview {
+	visibility: hidden;
+}
+
+/*
+	EXTERNAL RESOURCES:
+	video.png		http://www.pop-ce.rnp.br/site/wp-content/uploads/2012/03/Vista-220.png
+	site.png		http://www.agenciaclaro.com.br/wp-content/uploads/2011/03/icone-criacao-site-corporativo.png
+*/
