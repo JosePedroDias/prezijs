@@ -12,6 +12,7 @@ window.prezijs = function(o) {
 		 
 	var getCanvasDims = function() {
 		var el = document.querySelector('.zoomContainer');
+		if (!el) { throw 'Could not find .zoomContainer!'; }
 		return [
 			el.offsetWidth,
 			el.offsetHeight
@@ -20,6 +21,7 @@ window.prezijs = function(o) {
 
 	var getElementPos = function(id) {
 		var el = document.getElementById(id);
+		if (!el) { throw 'Could not find ' + id + '!'; }
 		return [
 			el.offsetLeft,
 			el.offsetTop
@@ -28,6 +30,7 @@ window.prezijs = function(o) {
 		 
 	var getElementDims = function(id) {
 		var el = document.getElementById(id);
+		if (!el) { throw 'Could not find ' + id + '!'; }
 		return [
 			el.offsetWidth,
 			el.offsetHeight
@@ -101,6 +104,8 @@ window.prezijs = function(o) {
 
 	document.body.addEventListener('keydown', onKeyDown);
 
+
+	// hack
 	onKeyDown({
 		keyCode:			39,
 		stopPropagation:	function() {}

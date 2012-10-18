@@ -1,0 +1,73 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+
+        <title>prezi js</title>
+
+        <link rel="stylesheet" type="text/css" href="http://meyerweb.com/eric/tools/css/reset/"/>
+        <link rel="stylesheet" type="text/css" href="css/prezijs.css"/>
+
+        <!--<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+        <script type="text/javascript" src="http://janne.aukia.com/zoomooz/jquery.zoomooz.min.js"></script>-->
+        <script type="text/javascript" src="js/jquery.min.js"></script>
+        <script type="text/javascript" src="js/jquery.zoomooz.min.js"></script>
+        
+        <script type="text/javascript" src="js/prezijs.js"></script>
+
+        <style type="text/css">
+            body {
+                font-family: sans-serif;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="zoomViewport">
+            <div class="zoomContainer">
+
+                <span id="overview" class="zoomTarget" data-targetsize="0.01" style="visibility:hidden"></span>
+
+                <div id="title" class="zoomTarget" data-targetsize="0.2">blah blah title</div>
+
+                <div id="s1" class="zoomTarget">
+                    SLIDE 1
+                </div>
+                
+                <div id="s2" class="zoomTarget">
+                    SLIDE 2
+                </div>
+
+                <div id="s3" class="zoomTarget">
+                    SLIDE 3
+                </div>
+
+                <div id="s4" class="zoomTarget">
+                    SLIDE 4
+                </div>
+
+            </div>  <!-- zoomContainer -->
+        </div>      <!-- zoomViewport -->
+
+        <script type="text/javascript">
+            $(window).load(function() {
+                prezijs({
+                    slides: [
+                        'overview',
+                        'title',
+                        's1', 's2', 's3', 's4',
+                    ],
+                    layout: [
+                        {id:'overview', pos:[0.5, 0.5]},
+                        {id:'title',    pos:[0.5, 0.1],  center:[0.5, 0]},
+                        {id:'s1',       pos:[0.33, 0.33]},
+                        {id:'s2',       pos:[0.66, 0.33]},
+                        {id:'s3',       pos:[0.33, 0.66]},
+                        {id:'s4',       pos:[0.66, 0.66]}
+                    ]
+                });
+            });
+        </script>
+
+    </body>
+</html>

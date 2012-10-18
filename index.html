@@ -3,191 +3,22 @@
     <head>
         <meta charset="utf-8"/>
 
-        <title>prezi js</title>
+        <title>prezijs demos</title>
 
-        <link rel="stylesheet" type="text/css" href="http://meyerweb.com/eric/tools/css/reset/"/>
-        <link rel="stylesheet" type="text/css" href="css/prezijs.css"/>
-
-        <link href="http://fonts.googleapis.com/css?family=Muli:400,300italic,400italic" rel="stylesheet" type="text/css"/>
-
-        <!--<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-        <script type="text/javascript" src="http://janne.aukia.com/zoomooz/jquery.zoomooz.min.js"></script>-->
-        <script type="text/javascript" src="js/jquery.min.js"></script>
-        <script type="text/javascript" src="js/jquery.zoomooz.min.js"></script>
-        
-        <script type="text/javascript" src="js/prezijs.js"></script>
+        <style type="text/css">
+            body {
+                font-family: sans-serif;
+            }
+        </style>
     </head>
 
     <body>
-        <div class="zoomViewport">
-            <div class="zoomContainer">
+        <h1>prezijs demos:</h1>
 
-                <img id="bg" src="img/bg.jpg" />
-
-                <span id="overview" class="zoomTarget" data-targetsize="0.01"></span>
-
-                <div id="title" class="zoomTarget" data-targetsize="0.2">stage-core</div>
-
-                <div id="what_is" class="zoomTarget" data-targetsize="0.7">
-                    <span>O que é</span><br/>
-                    
-                    <ul>
-                        <li>servidor HTTP p/ single page apps c/ websocket comm</li>
-                        <li>pensado para fazer jogos/apps colaborativos/competitivos</li>
-                        <li>fornece uma máquina de estados para gerir flow do jogo</li>
-                        <li>define um esqueleto de métodos que podem ser<br/>substituídos para definir lógida do jogo</li>
-                        <li>suporte <i>out-of-the-box</i> para jogos<br/>real-time e turn-based com humanos e bots</li>
-                    </ul>
-                </div>
-
-                <div id="sm_rt" class="zoomTarget">
-                    <span>Máquina de estados RT</span><br/>
-                    
-                    <img src="img/judge_rt_states.jpg" width="150"/>
-                </div>
-
-                <div id="sm_tb" class="zoomTarget" style="text-align:center">
-                    <span>Máquina de estados TB</span><br/>
-                    
-                    <img src="img/judge_tb_states.jpg" width="70"/>
-                </div>
-
-                <div id="api" class="zoomTarget" data-targetsize="0.7">
-                    <span>API</span><br/>
-                </div>
-
-                <div id="api1" class="zoomTarget">
-                    <span>Config Options (server)</span>
-
-                    <pre>
-{Number} port
-
-{String} rootDir
-
-{Number} fps
-
-{Number} botsRunEveryNFrames
-                    </pre>
-                </div>
-
-                <div id="api2" class="zoomTarget">
-                    <span>Stage API (server)</span>
-
-                    <pre>
-send({String} kind, {Object} o, {Object} session)
-
-broadcast({String} kind, {Object} o)
-
-subscribe({String} kind, {Function} cb)
-                    </pre>
-                </div>
-
-                <div id="api3" class="zoomTarget">
-                    <span>Judge API (server)</span>
-
-                    <pre>
-{Number} getNumReadyPlayers()
-{Object[]} getReadyPlayers()
-
-{Number} getNumWaitingPlayers()
-{Object[]} getWaitingPlayers()
-
-{Boolean} isRunning()
-start()
-stop()
-
-getTime()
-                    </pre>
-                </div>
-
-                <div id="api4" class="zoomTarget">
-                    <span>Judge API (server) - rewritable</span>
-
-                    <pre>
-sortFn
-
-{Object} rosterView({Object} o)
-
-{Object} generateDefaultSession()
-
-onPlayerEnter({Object} session)
-onPlayerExit({Object} session)
-onPlayerReady({Object} session)
-
-init({Boolean} onStart)
-
-prePlayerUpdates()
-onPlayerUpdate({Object} session)
-postPlayerUpdates()
-
-onMessage({any} message)
-onPlay({any} play)
-
-updatePerceptions({Object} perceptions, {Object} session,
-    {Object} state)
-                    </pre>
-                </div>
-
-                <div id="api5" class="zoomTarget">
-                    <span>Stage API (client)</span>
-
-                    <pre>
-init({Function({Object} session, {Object} cfg)} onSessionAvailableCb)
-
-logIn({Object} session, {Function()}onGameStartedCb)
-
-send({String} kind, {any} o)
-
-subscribe({String} kind, {Function} cb)
-                    </pre>
-                </div>
-
-                <div id="future" class="zoomTarget" data-targetsize="0.7">
-                    <span>Future</span><br/>
-
-                    <ul>
-                        <li><a target="_blank" href="http://127.0.0.1:8000/samples/platformGame/game2.html">platform game</a> with
-                            <a target="_blank" href="http://127.0.0.1:8000/samples/platformGame/editor.html">editor</a></li>
-                        <li><a target="_blank" href="http://127.0.0.1:8000/samples/patternify2/">patternify</a></li>
-                        <li><a target="_blank" href="http://127.0.0.1:8000/samples/pictionary/">pictionary</a></li>
-                        <li><a target="_blank" href="http://127.0.0.1:8000/samples/voxel/">voxel</a></li>
-                    </ul>
-
-                    <p><a href="https://github.com/JosePedroDias/stage-core">stage-core @ github</a></p>
-                </div>
-                
-            </div>  <!-- zoomContainer -->
-        </div>      <!-- zoomViewport -->
-
-        <script type="text/javascript">
-            $(window).load(function() {
-                prezijs({
-                    slides: [
-                        'overview',
-                        'title',
-                        'what_is',
-                        'sm_rt', 'sm_tb',
-                        'api',
-                        'api1', 'api2', 'api3', 'api4', 'api5', 
-                        'future'
-                    ],
-                    layout: [
-                        {id:'overview', pos:[0.5, 0.5]},
-                        {id:'title',    pos:[0.1, 0.1], center:[0, 0]},
-                        {id:'what_is',  pos:[0.3, 0.1], center:[0, 0]},
-                        {id:'sm_rt',    pos:[0.1, 0.35], center:[0, 0]},
-                        {id:'sm_tb',    pos:[0.3, 0.35], center:[0, 0]},
-                        {id:'api',      pos:[0.1,      0.65], center:[0, 0]},
-                        {id:'api1',     pos:[0.2-0.03, 0.65], center:[0, 0]},
-                        {id:'api2',     pos:[0.3+0.00, 0.65], center:[0, 0]},
-                        {id:'api3',     pos:[0.4+0.05, 0.65], center:[0, 0]},
-                        {id:'api4',     pos:[0.5+0.05, 0.65], center:[0, 0]},
-                        {id:'api5',     pos:[0.6+0.11, 0.65], center:[0, 0]},
-                        {id:'future',   pos:[0.1, 0.8], center:[0, 0]}
-                    ]
-                });
-            });
-        </script>
-
+        <ul>
+            <li><a href="demo.html">demo</a></li>
+            <li><a href="stage-core-en.html">stage-core en</a></li>
+            <li><a href="stage-core-pt.html">stage-core pt</a></li>
+        </ul>
     </body>
 </html>
