@@ -10,7 +10,6 @@ Make each reference element for slide stops have a meaningful id name.
 
 Call the prezijs function specifying the elements order and layout.
 	
-	javascript
 	$(window).load(function() {
 	    prezijs({
 	        slides: [
