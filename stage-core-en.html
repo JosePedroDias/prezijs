@@ -17,6 +17,8 @@
         <script type="text/javascript" src="js/jquery.zoomooz.min.js"></script>
         
         <script type="text/javascript" src="js/prezijs.js"></script>
+
+        <link rel="stylesheet" type="text/css" href="stage-core.css"/>
     </head>
 
     <body>
@@ -25,11 +27,11 @@
 
                 <img id="bg" src="img/bg.jpg" />
 
-                <span id="overview" class="zoomTarget" data-targetsize="0.01"></span>
+                <span id="overview" data-targetsize="0.01"></span>
 
-                <div id="title" class="zoomTarget" data-targetsize="0.2">stage-core</div>
+                <div id="title" data-targetsize="0.2">stage-core</div>
 
-                <div id="what_is" class="zoomTarget" data-targetsize="0.7">
+                <div id="what_is" data-targetsize="0.7">
                     <span>What is it?</span><br/>
                     
                     <ul>
@@ -41,23 +43,23 @@
                     </ul>
                 </div>
 
-                <div id="sm_rt" class="zoomTarget">
+                <div id="sm_rt">
                     <span>Real-time state machine</span><br/>
                     
                     <img src="img/judge_rt_states.jpg" width="150"/>
                 </div>
 
-                <div id="sm_tb" class="zoomTarget" style="text-align:center">
+                <div id="sm_tb" style="text-align:center">
                     <span>Turn-based state machine</span><br/>
                     
                     <img src="img/judge_tb_states.jpg" width="70"/>
                 </div>
 
-                <div id="api" class="zoomTarget" data-targetsize="0.7">
+                <div id="api" data-targetsize="0.7">
                     <span>API</span><br/>
                 </div>
 
-                <div id="api1" class="zoomTarget">
+                <div id="api1">
                     <span>Config Options (server)</span>
 
                     <pre>
@@ -71,7 +73,7 @@
                     </pre>
                 </div>
 
-                <div id="api2" class="zoomTarget">
+                <div id="api2">
                     <span>Stage API (server)</span>
 
                     <pre>
@@ -83,7 +85,7 @@ subscribe({String} kind, {Function} cb)
                     </pre>
                 </div>
 
-                <div id="api3" class="zoomTarget">
+                <div id="api3">
                     <span>Judge API (server)</span>
 
                     <pre>
@@ -101,7 +103,7 @@ getTime()
                     </pre>
                 </div>
 
-                <div id="api4" class="zoomTarget">
+                <div id="api4">
                     <span>Judge API (server) - rewritable</span>
 
                     <pre>
@@ -129,7 +131,7 @@ updatePerceptions({Object} perceptions, {Object} session,
                     </pre>
                 </div>
 
-                <div id="api5" class="zoomTarget">
+                <div id="api5">
                     <span>Stage API (client)</span>
 
                     <pre>
@@ -143,7 +145,7 @@ subscribe({String} kind, {Function} cb)
                     </pre>
                 </div>
 
-                <div id="future" class="zoomTarget" data-targetsize="0.7">
+                <div id="future" data-targetsize="0.7">
                     <span>Future</span><br/>
 
                     <ul>
@@ -160,6 +162,8 @@ subscribe({String} kind, {Function} cb)
             </div>  <!-- zoomContainer -->
         </div>      <!-- zoomViewport -->
 
+        <div id="counter"></div>
+
         <script type="text/javascript">
             $(window).load(function() {
                 prezijs({
@@ -172,20 +176,20 @@ subscribe({String} kind, {Function} cb)
                         'api1', 'api2', 'api3', 'api4', 'api5', 
                         'future'
                     ],
-                    layout: [
-                        {id:'overview', pos:[0.5, 0.5]},
-                        {id:'title',    pos:[0.1, 0.1], center:[0, 0]},
-                        {id:'what_is',  pos:[0.3, 0.1], center:[0, 0]},
-                        {id:'sm_rt',    pos:[0.1, 0.35], center:[0, 0]},
-                        {id:'sm_tb',    pos:[0.3, 0.35], center:[0, 0]},
-                        {id:'api',      pos:[0.1,      0.65], center:[0, 0]},
-                        {id:'api1',     pos:[0.2-0.03, 0.65], center:[0, 0]},
-                        {id:'api2',     pos:[0.3+0.00, 0.65], center:[0, 0]},
-                        {id:'api3',     pos:[0.4+0.05, 0.65], center:[0, 0]},
-                        {id:'api4',     pos:[0.5+0.05, 0.65], center:[0, 0]},
-                        {id:'api5',     pos:[0.6+0.11, 0.65], center:[0, 0]},
-                        {id:'future',   pos:[0.1, 0.8], center:[0, 0]}
-                    ]
+                    layout: {
+                        overview: {pos:[0.5, 0.5]},
+                        title:    {pos:[0.1, 0.1], center:[0, 0]},
+                        what_is:  {pos:[0.3, 0.1], center:[0, 0]},
+                        sm_rt:    {pos:[0.1, 0.35], center:[0, 0]},
+                        sm_tb:    {pos:[0.3, 0.35], center:[0, 0]},
+                        api:      {pos:[0.1,      0.65], center:[0, 0]},
+                        api1:     {pos:[0.2-0.03, 0.65], center:[0, 0]},
+                        api2:     {pos:[0.3+0.00, 0.65], center:[0, 0]},
+                        api3:     {pos:[0.4+0.05, 0.65], center:[0, 0]},
+                        api4:     {pos:[0.5+0.05, 0.65], center:[0, 0]},
+                        api5:     {pos:[0.6+0.11, 0.65], center:[0, 0]},
+                        future:   {pos:[0.1, 0.8], center:[0, 0]}
+                    }
                 });
             });
         </script>

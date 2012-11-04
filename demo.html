@@ -26,46 +26,46 @@
         <div class="zoomViewport">
             <div class="zoomContainer">
 
-                <span id="overview" class="zoomTarget" data-targetsize="0.01" style="visibility:hidden"></span>
+                <span id="overview" data-targetsize="0.01" style="visibility:hidden"></span>
 
-                <div id="title" class="zoomTarget" data-targetsize="0.2">blah blah title</div>
+                <div id="title" data-targetsize="0.2">blah blah title</div>
 
-                <div id="s1" class="zoomTarget">
+                <div id="s1">
                     SLIDE 1
                 </div>
                 
-                <div id="s2" class="zoomTarget">
+                <div id="s2">
                     SLIDE 2
                 </div>
 
-                <div id="s3" class="zoomTarget">
+                <div id="s3">
                     SLIDE 3
                 </div>
 
-                <div id="s4" class="zoomTarget">
+                <div id="s4">
                     SLIDE 4
                 </div>
 
             </div>  <!-- zoomContainer -->
         </div>      <!-- zoomViewport -->
 
+        <div id="counter"></div>
+
         <script type="text/javascript">
-            $(window).load(function() {
-                prezijs({
-                    slides: [
-                        'overview',
-                        'title',
-                        's1', 's2', 's3', 's4',
-                    ],
-                    layout: [
-                        {id:'overview', pos:[0.5, 0.5]},
-                        {id:'title',    pos:[0.5, 0.1],  center:[0.5, 0]},
-                        {id:'s1',       pos:[0.33, 0.33]},
-                        {id:'s2',       pos:[0.66, 0.33]},
-                        {id:'s3',       pos:[0.33, 0.66]},
-                        {id:'s4',       pos:[0.66, 0.66]}
-                    ]
-                });
+            prezijs({
+                slides: [
+                    'overview',
+                    'title',
+                    's1', 's2', 's3', 's4',
+                ],
+                layout: {
+                    overview: {pos:[0.5, 0.5]},
+                    title:    {pos:[0.5, 0.1],  center:[0.5, 0]},
+                    s1:       {pos:[0.33, 0.33]},
+                    s2:       {pos:[0.66, 0.33]},
+                    s3:       {pos:[0.33, 0.66]},
+                    s4:       {pos:[0.66, 0.66]}
+                }
             });
         </script>
 

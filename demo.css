@@ -1,0 +1,27 @@
+body {
+    font-family:        sans-serif;
+    background-color:   black;
+}
+
+.zoomContainer {
+    background-color:   #400;
+}
+
+.zoomContainer > .zoomTarget {
+    -webkit-transition: all 1s;
+    opacity:            0;
+    
+    background-color:   #FFF;
+    padding:            4px 8px;
+    border-radius:      4px;
+    box-shadow:         3px 3px 4px rgba(0, 0, 0, 0.5);
+}
+
+.current {
+    opacity:            1 !important;
+}
+
+.visited {
+    opacity:            0.33 !important;
+    color:              #777 !important;
+}
